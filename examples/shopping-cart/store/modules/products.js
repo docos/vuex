@@ -28,6 +28,14 @@ const mutations = {
 
   [types.ADD_TO_CART] (state, { id }) {
     state.all.find(p => p.id === id).inventory--
+  },
+  [types.REMOVE_PRODUCTS](state, { id }){
+      for(let i=0;i<state.all.length;i++){
+          if (state.all[i].id == id){
+              state.all.splice(i,1);
+              break;
+          }
+      }
   }
 }
 

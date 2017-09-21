@@ -8,6 +8,7 @@
         @click="addToCart(p)">
         Add to cart
       </button>
+      <button @click="remove(p)">remove product</button>
     </li>
   </ul>
 </template>
@@ -20,7 +21,8 @@ export default {
     products: 'allProducts'
   }),
   methods: mapActions([
-    'addToCart'
+    'addToCart',
+     'remove'
   ]),
   created () {
     this.$store.dispatch('getAllProducts')

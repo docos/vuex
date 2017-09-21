@@ -7,3 +7,10 @@ export const addToCart = ({ commit }, product) => {
     })
   }
 }
+export const remove = ({ commit }, product) => {
+    if (product.inventory > 0) {
+        commit(types.REMOVE_PRODUCTS, {
+            id: product.id
+        })
+    }
+}
